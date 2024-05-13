@@ -47,6 +47,10 @@ function loop() {
 
     snake.cells.unshift({ x: snake.x, y: snake.y});
 
+    window.score =  {
+        score: '${count}'
+    };
+
     if (snake.cells.length > snake.maxCells){snake.cells.pop();}
 
     context.fillStyle = 'red';
@@ -72,10 +76,12 @@ function loop() {
 
                 apple.x = getRand(0, 25) * grid;
                 apple.y = getRand(0, 25) * grid;
+
+
             }
         }
         
-
+        console.log(snake.cells.length*10);
     });
 
     document.addEventListener('keydown', function (e){
@@ -96,6 +102,9 @@ function loop() {
             snake.dx = 0;
           }
     })
+
+    document.getElementById('score').innerHTML ="Score: " + (snake.cells.length*10 - 40);
+    
 }
 
 requestAnimationFrame(loop);
