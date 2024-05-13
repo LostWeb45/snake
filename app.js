@@ -1,7 +1,7 @@
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 var grid = 16;
-var random = 6 + Math.random() * (25 - 6);
+var random = getRand(6, 25);
 var sream = true;
 var count = 0;
 
