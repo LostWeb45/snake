@@ -105,6 +105,12 @@ function loop() {
 
     document.getElementById('score').innerHTML ="Score: " + (snake.cells.length*10 - 40);
     
+
+    if(snake.cells.length > 24){
+        document.querySelector('.vidos').classList.remove('vidos', 'vidos1')
+        document.getElementById('vid').play();
+    }
+    
 }
 
 requestAnimationFrame(loop);
