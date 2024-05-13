@@ -33,13 +33,25 @@
         }
         .vidos1{
             opacity: 1;
-            width: auto;
-            height: auto;
-            
+        }
+        .vid2{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 999;
+            opacity: 0;
+        }
+        .vid3{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 999;
+            opacity: 1;
         }
     </style>
 
 <body>
+    <video id = 'vid2' class="vid2" src="./happyend/1.mp4"></video>
     <h2 class="score" id="score"></h2>
     <canvas id="game" width="400" height="400"></canvas>
     <video id = 'vid' class="vidos" src="./happyend/УРА ПОБЕДА МЕМ.mp4"></video>

@@ -1,7 +1,8 @@
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 var grid = 16;
-
+var random = 6 + Math.random() * (25 - 6);
+var sream = true;
 var count = 0;
 
 var snake = {
@@ -81,7 +82,6 @@ function loop() {
             }
         }
         
-        console.log(snake.cells.length*10);
     });
 
     document.addEventListener('keydown', function (e){
@@ -106,10 +106,24 @@ function loop() {
     document.getElementById('score').innerHTML ="Score: " + (snake.cells.length*10 - 40);
     
 
-    if(snake.cells.length > 24){
-        document.querySelector('.vidos').classList.remove('vidos', 'vidos1')
-        document.getElementById('vid').play();
+
+    
+   if (sream == true){
+    if(snake.cells.length > random){
+        document.getElementById('vid2').classList.remove('vid2');
+        document.getElementById('vid2').classList.add('vid3');
+        document.getElementById('vid2').play();
+
+        function back(){
+            document.getElementById('vid2').classList.remove('vid3');
+            document.getElementById('vid2').classList.add('vid2');    
+        }
+
+        setTimeout(back, 800);
+
+        sream = false;
     }
+   }
     
 }
 
